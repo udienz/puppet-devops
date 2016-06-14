@@ -7,9 +7,12 @@ if RUBY_VERSION >= '1.9'
   RuboCop::RakeTask.new
 end
 
-PuppetLint.configuration.send('disable_80chars')
 PuppetLint.configuration.relative = true
-PuppetLint.configuration.ignore_paths = ['spec/**/*.pp', 'pkg/**/*.pp']
+PuppetLint.configuration.send("disable_80chars")
+PuppetLint.configuration.send("disable_autoloader_layout")
+PuppetLint.configuration.send('disable_documentation')
+PuppetLint.configuration.send('disable_variable_contains_dash')
+PuppetLint.configuration.ignore_paths = ["spec/**/*.pp", "pkg/**/*.pp"]
 
 desc 'Validate manifests, templates, and ruby files'
 task :validate do
