@@ -3,8 +3,6 @@ language: ruby
 bundler_args: --without development system_tests
 before_install: rm Gemfile.lock || true
 rvm:
-  - 1.9.3
-  - 2.0.0
   - 2.1.9
   - 2.2.5
   - 2.3.1
@@ -12,16 +10,15 @@ script: bundle exec rake validate lint
 env:
   - PUPPET_VERSION="~> 3.5.0" STRICT_VARIABLES=yes
   - PUPPET_VERSION="~> 3.6.0" STRICT_VARIABLES=yes
-  - PUPPET_VERSION="~> 3.7.0" STRICT_VARIABLES=yes
   - PUPPET_VERSION="~> 3.7.0" STRICT_VARIABLES=yes FUTURE_PARSER=yes
   - PUPPET_VERSION="~> 4.0.0" STRICT_VARIABLES=yes
 matrix:
   exclude:
   # Ruby 2.1.0
-  - rvm: 2.1.0
-    env: PUPPET_VERSION="~> 3.2.0"
-  - rvm: 2.1.0
-    env: PUPPET_VERSION="~> 3.3.0"
-  - rvm: 2.1.0
-    env: PUPPET_VERSION="~> 3.4.0"
+  - rvm: 2.2.5
+    env: PUPPET_VERSION="~> 3.5.0"
+  - rvm: 2.2.5
+    env: PUPPET_VERSION="~> 3.6.0"
+  - rvm: 2.2.5
+    env: PUPPET_VERSION="~> 3.7.0"
 
