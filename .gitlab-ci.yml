@@ -1,0 +1,41 @@
+stages:
+ - build
+ - test
+ - deploy
+
+test-xenialiruby231:
+ stage: test
+ image: udienz/images:xenial-ruby231
+ script:
+  - bash ./tests/debian.sh
+  - bash ./tests/init.sh
+ only:
+  - master
+
+test-xenialiruby225:
+ stage: test
+ image: udienz/images:xenial-ruby225
+ script:
+  - bash ./tests/debian.sh
+  - bash ./tests/init.sh
+ only:
+  - master
+
+test-xenialiruby219:
+ stage: test
+ image: udienz/images:xenial-ruby219
+ script:
+  - bash ./tests/debian.sh
+  - bash ./tests/init.sh
+ only:
+  - master
+
+test-xenialiruby193:
+ stage: test
+ image: udienz/images:xenial-ruby193
+ script:
+  - bash ./tests/debian.sh
+  - bash ./tests/init.sh
+ only:
+  - master
+

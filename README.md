@@ -1,4 +1,6 @@
-# devops
+# Puppet Modules
+
+[![build status](https://git.mahyudd.in/udienz/puppet-devops/badges/master/build.svg)](https://git.mahyudd.in/udienz/puppet-devops/commits/master)
 
 #### Table of Contents
 
